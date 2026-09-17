@@ -1,0 +1,225 @@
+
+======================================================================
+Query: 1. In-stock books (SELECT + WHERE)
+----------------------------------------------------------------------
+SELECT title, price_gbp, rating FROM books WHERE in_stock = 1;
+----------------------------------------------------------------------
+                             title  price_gbp  rating
+             Travel Sample Title 1      42.15       1
+             Travel Sample Title 2      24.11       2
+             Travel Sample Title 3      46.95       5
+             Travel Sample Title 4      39.72       1
+             Travel Sample Title 5      15.14       2
+             Travel Sample Title 6      40.29       5
+             Travel Sample Title 7      45.94       5
+             Travel Sample Title 8      21.41       5
+             Travel Sample Title 9      50.56       1
+            Travel Sample Title 10      45.05       3
+            Travel Sample Title 11      18.19       3
+            Travel Sample Title 12      15.09       1
+            Travel Sample Title 13      52.44       5
+            Travel Sample Title 14      50.44       4
+            Mystery Sample Title 1      16.68       4
+            Mystery Sample Title 2      37.82       5
+            Mystery Sample Title 3      39.07       1
+            Mystery Sample Title 4      43.23       3
+            Mystery Sample Title 5      52.83       1
+            Mystery Sample Title 6      24.26       3
+            Mystery Sample Title 7      28.82       2
+            Mystery Sample Title 8      23.71       1
+            Mystery Sample Title 9      41.93       5
+           Mystery Sample Title 10      22.62       4
+           Mystery Sample Title 11      23.86       5
+           Mystery Sample Title 12      44.38       1
+           Mystery Sample Title 13      51.17       3
+           Mystery Sample Title 14      23.75       2
+           Mystery Sample Title 15      53.87       3
+ Historical Fiction Sample Title 1      42.94       4
+ Historical Fiction Sample Title 2      33.21       3
+ Historical Fiction Sample Title 3      22.71       5
+ Historical Fiction Sample Title 4      23.50       5
+ Historical Fiction Sample Title 5      54.93       4
+ Historical Fiction Sample Title 6      21.35       2
+ Historical Fiction Sample Title 7      34.92       1
+ Historical Fiction Sample Title 8      18.06       2
+ Historical Fiction Sample Title 9      31.39       1
+Historical Fiction Sample Title 10      29.39       4
+Historical Fiction Sample Title 11      22.94       5
+Historical Fiction Sample Title 12      44.17       1
+Historical Fiction Sample Title 13      54.29       3
+           Classics Sample Title 1      27.34       3
+           Classics Sample Title 2      18.33       1
+           Classics Sample Title 3      53.85       3
+           Classics Sample Title 4      48.21       5
+           Classics Sample Title 5      53.58       3
+           Classics Sample Title 6      35.62       2
+           Classics Sample Title 7      29.00       2
+           Classics Sample Title 8      57.69       5
+           Classics Sample Title 9      40.14       4
+          Classics Sample Title 10      16.04       3
+          Classics Sample Title 11      22.35       2
+          Classics Sample Title 12      57.36       1
+            Romance Sample Title 1      34.55       1
+            Romance Sample Title 2      48.40       2
+            Romance Sample Title 3      34.02       5
+            Romance Sample Title 4      23.62       5
+            Romance Sample Title 5      58.23       5
+            Romance Sample Title 6      44.64       3
+            Romance Sample Title 7      59.75       3
+            Romance Sample Title 8      55.02       4
+            Romance Sample Title 9      22.77       1
+           Romance Sample Title 10      11.54       5
+           Romance Sample Title 11      39.62       1
+           Romance Sample Title 12      45.53       1
+           Romance Sample Title 13      13.84       1
+           Romance Sample Title 14      14.01       2
+                 Broken Price Book      35.62       3
+
+======================================================================
+Query: 2. Top 10 most expensive books, in INR (ORDER BY + LIMIT)
+----------------------------------------------------------------------
+SELECT title, price_inr FROM books ORDER BY price_inr DESC LIMIT 10;
+----------------------------------------------------------------------
+                             title  price_inr
+            Romance Sample Title 7    6303.62
+            Romance Sample Title 5    6143.26
+           Classics Sample Title 8    6086.30
+          Classics Sample Title 12    6051.48
+            Romance Sample Title 8    5804.61
+ Historical Fiction Sample Title 5    5795.12
+Historical Fiction Sample Title 13    5727.60
+           Mystery Sample Title 15    5683.28
+           Classics Sample Title 3    5681.18
+           Classics Sample Title 5    5652.69
+
+======================================================================
+Query: 3. Distinct rating values present (DISTINCT)
+----------------------------------------------------------------------
+SELECT DISTINCT rating FROM books ORDER BY rating;
+----------------------------------------------------------------------
+ rating
+      1
+      2
+      3
+      4
+      5
+
+======================================================================
+Query: 4. Highly-rated, mid-priced books (IN + BETWEEN)
+----------------------------------------------------------------------
+SELECT title, price_gbp, rating
+        FROM books
+        WHERE rating IN (4, 5) AND price_gbp BETWEEN 20 AND 40;
+----------------------------------------------------------------------
+                             title  price_gbp  rating
+             Travel Sample Title 8      21.41       5
+            Mystery Sample Title 2      37.82       5
+           Mystery Sample Title 10      22.62       4
+           Mystery Sample Title 11      23.86       5
+ Historical Fiction Sample Title 3      22.71       5
+ Historical Fiction Sample Title 4      23.50       5
+Historical Fiction Sample Title 10      29.39       4
+Historical Fiction Sample Title 11      22.94       5
+            Romance Sample Title 3      34.02       5
+            Romance Sample Title 4      23.62       5
+
+======================================================================
+Query: 5. Book/category JOIN, ranked by rating within category
+----------------------------------------------------------------------
+SELECT c.category_name, b.title, b.rating, b.price_inr
+        FROM books b
+        JOIN categories c ON b.category_id = c.category_id
+        ORDER BY c.category_name, b.rating DESC, b.price_inr DESC;
+----------------------------------------------------------------------
+     category_name                              title  rating  price_inr
+          Classics            Classics Sample Title 8       5    6086.30
+          Classics            Classics Sample Title 4       5    5086.16
+          Classics            Classics Sample Title 9       4    4234.77
+          Classics            Classics Sample Title 3       3    5681.18
+          Classics            Classics Sample Title 5       3    5652.69
+          Classics            Classics Sample Title 1       3    2884.37
+          Classics           Classics Sample Title 10       3    1692.22
+          Classics            Classics Sample Title 6       2    3757.91
+          Classics            Classics Sample Title 7       2    3059.50
+          Classics           Classics Sample Title 11       2    2357.93
+          Classics           Classics Sample Title 12       1    6051.48
+          Classics            Classics Sample Title 2       1    1933.81
+Historical Fiction  Historical Fiction Sample Title 4       5    2479.25
+Historical Fiction Historical Fiction Sample Title 11       5    2420.17
+Historical Fiction  Historical Fiction Sample Title 3       5    2395.91
+Historical Fiction  Historical Fiction Sample Title 5       4    5795.12
+Historical Fiction  Historical Fiction Sample Title 1       4    4530.17
+Historical Fiction Historical Fiction Sample Title 10       4    3100.64
+Historical Fiction Historical Fiction Sample Title 13       3    5727.60
+Historical Fiction  Historical Fiction Sample Title 2       3    3503.66
+Historical Fiction  Historical Fiction Sample Title 6       2    2252.43
+Historical Fiction  Historical Fiction Sample Title 8       2    1905.33
+Historical Fiction Historical Fiction Sample Title 12       1    4659.94
+Historical Fiction  Historical Fiction Sample Title 7       1    3684.06
+Historical Fiction  Historical Fiction Sample Title 9       1    3311.64
+           Mystery             Mystery Sample Title 9       5    4423.62
+           Mystery             Mystery Sample Title 2       5    3990.01
+           Mystery            Mystery Sample Title 11       5    2517.23
+           Mystery            Mystery Sample Title 10       4    2386.41
+           Mystery             Mystery Sample Title 1       4    1759.74
+           Mystery            Mystery Sample Title 15       3    5683.28
+           Mystery            Mystery Sample Title 13       3    5398.44
+           Mystery             Mystery Sample Title 4       3    4560.76
+           Mystery             Mystery Sample Title 6       3    2559.43
+           Mystery             Mystery Sample Title 7       2    3040.51
+           Mystery            Mystery Sample Title 14       2    2505.62
+           Mystery             Mystery Sample Title 5       1    5573.56
+           Mystery            Mystery Sample Title 12       1    4682.09
+           Mystery             Mystery Sample Title 3       1    4121.88
+           Mystery             Mystery Sample Title 8       1    2501.41
+           Romance             Romance Sample Title 5       5    6143.26
+           Romance             Romance Sample Title 3       5    3589.11
+           Romance             Romance Sample Title 4       5    2491.91
+           Romance            Romance Sample Title 10       5    1217.47
+           Romance             Romance Sample Title 8       4    5804.61
+           Romance             Romance Sample Title 7       3    6303.62
+           Romance             Romance Sample Title 6       3    4709.52
+           Romance             Romance Sample Title 2       2    5106.20
+           Romance            Romance Sample Title 14       2    1478.06
+           Romance            Romance Sample Title 12       1    4803.42
+           Romance            Romance Sample Title 11       1    4179.91
+           Romance             Romance Sample Title 1       1    3645.02
+           Romance             Romance Sample Title 9       1    2402.24
+           Romance            Romance Sample Title 13       1    1460.12
+            Travel             Travel Sample Title 13       5    5532.42
+            Travel              Travel Sample Title 3       5    4953.23
+            Travel              Travel Sample Title 7       5    4846.67
+            Travel              Travel Sample Title 6       5    4250.60
+            Travel              Travel Sample Title 8       5    2258.76
+            Travel             Travel Sample Title 14       4    5321.42
+            Travel             Travel Sample Title 10       3    4752.77
+            Travel                  Broken Price Book       3    3757.91
+            Travel             Travel Sample Title 11       3    1919.04
+            Travel              Travel Sample Title 2       2    2543.60
+            Travel              Travel Sample Title 5       2    1597.27
+            Travel              Travel Sample Title 9       1    5334.08
+            Travel              Travel Sample Title 1       1    4446.82
+            Travel              Travel Sample Title 4       1    4190.46
+            Travel             Travel Sample Title 12       1    1592.00
+
+======================================================================
+Equivalence check: pd.read_sql JOIN vs pandas-only pd.merge
+======================================================================
+
+pd.read_sql result (first 5 rows):
+category_name                    title  rating  price_inr
+     Classics  Classics Sample Title 1       3    2884.37
+     Classics Classics Sample Title 10       3    1692.22
+     Classics Classics Sample Title 11       2    2357.93
+     Classics Classics Sample Title 12       1    6051.48
+     Classics  Classics Sample Title 2       1    1933.81
+
+pd.merge result (first 5 rows):
+category_name                    title  rating  price_inr
+     Classics  Classics Sample Title 1       3    2884.37
+     Classics Classics Sample Title 10       3    1692.22
+     Classics Classics Sample Title 11       2    2357.93
+     Classics Classics Sample Title 12       1    6051.48
+     Classics  Classics Sample Title 2       1    1933.81
+
+DataFrames are equal: True

@@ -1,0 +1,70 @@
+title,price_gbp,price_inr,rating,in_stock,category
+Travel Sample Title 1,42.15,4446.82,1,True,Travel
+Travel Sample Title 2,24.11,2543.6,2,True,Travel
+Travel Sample Title 3,46.95,4953.23,5,True,Travel
+Travel Sample Title 4,39.72,4190.46,1,True,Travel
+Travel Sample Title 5,15.14,1597.27,2,True,Travel
+Travel Sample Title 6,40.29,4250.6,5,True,Travel
+Travel Sample Title 7,45.94,4846.67,5,True,Travel
+Travel Sample Title 8,21.41,2258.76,5,True,Travel
+Travel Sample Title 9,50.56,5334.08,1,True,Travel
+Travel Sample Title 10,45.05,4752.77,3,True,Travel
+Travel Sample Title 11,18.19,1919.04,3,True,Travel
+Travel Sample Title 12,15.09,1592.0,1,True,Travel
+Travel Sample Title 13,52.44,5532.42,5,True,Travel
+Travel Sample Title 14,50.44,5321.42,4,True,Travel
+Mystery Sample Title 1,16.68,1759.74,4,True,Mystery
+Mystery Sample Title 2,37.82,3990.01,5,True,Mystery
+Mystery Sample Title 3,39.07,4121.88,1,True,Mystery
+Mystery Sample Title 4,43.23,4560.76,3,True,Mystery
+Mystery Sample Title 5,52.83,5573.56,1,True,Mystery
+Mystery Sample Title 6,24.26,2559.43,3,True,Mystery
+Mystery Sample Title 7,28.82,3040.51,2,True,Mystery
+Mystery Sample Title 8,23.71,2501.41,1,True,Mystery
+Mystery Sample Title 9,41.93,4423.62,5,True,Mystery
+Mystery Sample Title 10,22.62,2386.41,4,True,Mystery
+Mystery Sample Title 11,23.86,2517.23,5,True,Mystery
+Mystery Sample Title 12,44.38,4682.09,1,True,Mystery
+Mystery Sample Title 13,51.17,5398.44,3,True,Mystery
+Mystery Sample Title 14,23.75,2505.62,2,True,Mystery
+Mystery Sample Title 15,53.87,5683.28,3,True,Mystery
+Historical Fiction Sample Title 1,42.94,4530.17,4,True,Historical Fiction
+Historical Fiction Sample Title 2,33.21,3503.66,3,True,Historical Fiction
+Historical Fiction Sample Title 3,22.71,2395.91,5,True,Historical Fiction
+Historical Fiction Sample Title 4,23.5,2479.25,5,True,Historical Fiction
+Historical Fiction Sample Title 5,54.93,5795.12,4,True,Historical Fiction
+Historical Fiction Sample Title 6,21.35,2252.43,2,True,Historical Fiction
+Historical Fiction Sample Title 7,34.92,3684.06,1,True,Historical Fiction
+Historical Fiction Sample Title 8,18.06,1905.33,2,True,Historical Fiction
+Historical Fiction Sample Title 9,31.39,3311.64,1,True,Historical Fiction
+Historical Fiction Sample Title 10,29.39,3100.64,4,True,Historical Fiction
+Historical Fiction Sample Title 11,22.94,2420.17,5,True,Historical Fiction
+Historical Fiction Sample Title 12,44.17,4659.94,1,True,Historical Fiction
+Historical Fiction Sample Title 13,54.29,5727.6,3,True,Historical Fiction
+Classics Sample Title 1,27.34,2884.37,3,True,Classics
+Classics Sample Title 2,18.33,1933.81,1,True,Classics
+Classics Sample Title 3,53.85,5681.18,3,True,Classics
+Classics Sample Title 4,48.21,5086.16,5,True,Classics
+Classics Sample Title 5,53.58,5652.69,3,True,Classics
+Classics Sample Title 6,35.62,3757.91,2,True,Classics
+Classics Sample Title 7,29.0,3059.5,2,True,Classics
+Classics Sample Title 8,57.69,6086.3,5,True,Classics
+Classics Sample Title 9,40.14,4234.77,4,True,Classics
+Classics Sample Title 10,16.04,1692.22,3,True,Classics
+Classics Sample Title 11,22.35,2357.93,2,True,Classics
+Classics Sample Title 12,57.36,6051.48,1,True,Classics
+Romance Sample Title 1,34.55,3645.02,1,True,Romance
+Romance Sample Title 2,48.4,5106.2,2,True,Romance
+Romance Sample Title 3,34.02,3589.11,5,True,Romance
+Romance Sample Title 4,23.62,2491.91,5,True,Romance
+Romance Sample Title 5,58.23,6143.26,5,True,Romance
+Romance Sample Title 6,44.64,4709.52,3,True,Romance
+Romance Sample Title 7,59.75,6303.62,3,True,Romance
+Romance Sample Title 8,55.02,5804.61,4,True,Romance
+Romance Sample Title 9,22.77,2402.24,1,True,Romance
+Romance Sample Title 10,11.54,1217.47,5,True,Romance
+Romance Sample Title 11,39.62,4179.91,1,True,Romance
+Romance Sample Title 12,45.53,4803.42,1,True,Romance
+Romance Sample Title 13,13.84,1460.12,1,True,Romance
+Romance Sample Title 14,14.01,1478.06,2,True,Romance
+Broken Price Book,35.62,3757.91,3,True,Travel
