@@ -1,0 +1,25 @@
+# Consolidated requirements for all 3 modules (one file, per the root README).
+# You can also install per-module if you prefer (each module folder's own
+# subset is listed in its README), but this single file covers everything.
+
+# --- Module 1: data_pipeline ---
+requests
+beautifulsoup4
+pandas
+
+# --- Module 2: analytics ---
+seaborn
+scikit-learn
+imbalanced-learn
+joblib
+matplotlib
+numpy
+tabulate
+
+# --- Module 3: support_assistant ---
+sentence-transformers
+chromadb
+langgraph
+fastapi
+uvicorn[standard]
+pydantic
