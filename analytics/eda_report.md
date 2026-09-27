@@ -44,7 +44,7 @@ memory usage: 80.7 KB
 | 75%   |   1        |   3        |  38      |   1        |   0        |  31      |
 | max   |   1        |   3        |  80      |   8        |   6        | 512.329  |
 
-### Missing values (%) â€” columns with any missing data
+### Missing values (%) — columns with any missing data
 |             |     0 |
 |:------------|------:|
 | deck        | 77.22 |
@@ -61,13 +61,13 @@ memory usage: 80.7 KB
 
 Shape after missing-value handling: (889, 15)
 
-## 3. Univariate Analysis â€” age & fare
+## 3. Univariate Analysis — age & fare
 
 Saved `charts/univariate_age_fare.png`.
 - IQR outliers in **age**: 65 (bounds: [2.50, 54.50])
 - IQR outliers in **fare**: 114 (bounds: [-26.76, 65.66])
 
-Fare â€” mean=32.10, median=14.45, mode=8.05
+Fare — mean=32.10, median=14.45, mode=8.05
 Since mean > median > mode, the fare distribution is **right-skewed**: a small number of high-fare (first-class) passengers pull the mean well above the typical (median) fare.
 
 ## 4. Bivariate Analysis
@@ -101,17 +101,17 @@ Interpretation:
 
 ## 5. Multivariate Data Story (4+ charts)
 
-**Chart 1 â€” Survival rate by class & sex (bar):** Women survived at far higher rates than men in every class, and within each sex, survival drops sharply from 1st to 3rd class. This suggests both the 'women and children first' evacuation norm and unequal access to lifeboats by cabin class were both at play, rather than either factor alone explaining the outcome.
+**Chart 1 — Survival rate by class & sex (bar):** Women survived at far higher rates than men in every class, and within each sex, survival drops sharply from 1st to 3rd class. This suggests both the 'women and children first' evacuation norm and unequal access to lifeboats by cabin class were both at play, rather than either factor alone explaining the outcome.
 
-**Chart 2 â€” Age by survival (box):** Median age is broadly similar between survivors and non-survivors, but survivors show a visibly wider lower tail, consistent with young children being prioritized for rescue even though age alone is a weak predictor overall.
+**Chart 2 — Age by survival (box):** Median age is broadly similar between survivors and non-survivors, but survivors show a visibly wider lower tail, consistent with young children being prioritized for rescue even though age alone is a weak predictor overall.
 
-**Chart 3 â€” Fare vs age, colored by survival (scatter):** Survivors are visibly concentrated at higher fares, while the cluster of low-fare passengers across all ages skews toward non-survival. Fare, as a proxy for cabin class and deck location, looks like a stronger survival signal than age by itself.
+**Chart 3 — Fare vs age, colored by survival (scatter):** Survivors are visibly concentrated at higher fares, while the cluster of low-fare passengers across all ages skews toward non-survival. Fare, as a proxy for cabin class and deck location, looks like a stronger survival signal than age by itself.
 
-**Chart 4 â€” Survival rate by family size (bar):** Passengers traveling with a small family (1-3 relatives aboard) survived at higher rates than those traveling completely alone or in very large families, suggesting mutual help in small groups, while large families struggled to stay together and evacuate as a unit.
+**Chart 4 — Survival rate by family size (bar):** Passengers traveling with a small family (1-3 relatives aboard) survived at higher rates than those traveling completely alone or in very large families, suggesting mutual help in small groups, while large families struggled to stay together and evacuate as a unit.
 
 ## 6. Exploratory Standardization Check (age & fare)
 
-- **age** â€” before: mean=29.315, std=12.985 | after z-score: mean=0.000, std=1.000
-- **fare** â€” before: mean=32.097, std=49.698 | after z-score: mean=0.000, std=1.000
+- **age** — before: mean=29.315, std=12.985 | after z-score: mean=0.000, std=1.000
+- **fare** — before: mean=32.097, std=49.698 | after z-score: mean=0.000, std=1.000
 
 Note: this standardization is an EDA-stage sanity check only. It does not feed into the modeling pipeline in `02_modeling.py`, which performs its own train-only scaling to avoid leakage.

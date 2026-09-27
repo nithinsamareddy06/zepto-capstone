@@ -52,7 +52,7 @@ Saved `charts/decision_tree.png` and `charts/roc_curves.png`.
 | Strategy                |   Precision |   Recall |    F1 |
 |:------------------------|------------:|---------:|------:|
 | Baseline (no handling)  |       0.8   |    0.696 | 0.744 |
-| class_weight='balanced' |       0.814 |    0.696 | 0.75  |
+| class_weight='balanced' |       0.742 |    0.71  | 0.726 |
 | SMOTE (train fold only) |       0.757 |    0.768 | 0.763 |
 
 **Conclusion:** 'SMOTE (train fold only)' achieved the highest F1 (0.763) among the three strategies. class_weight='balanced' and SMOTE both push recall up relative to the baseline by forcing the model to pay more attention to the minority (survived) class, typically at some cost to precision; the baseline tends to favor the majority class and under-predicts survival, which matters for a use case where missing a true survivor (false negative) is the costlier error.
@@ -63,11 +63,11 @@ Best params: {'classifier__max_depth': 10, 'classifier__max_features': 'sqrt', '
 Best CV F1 score: 0.749
 OOB score of best estimator (refit on full train set): 0.820
 
-## 7. Regression Side-Task â€” Predicting `fare`
+## 7. Regression Side-Task — Predicting `fare`
 
 MAE=20.898  RMSE=30.533  R2=0.398  Adjusted R2=0.373
 Saved `charts/regression_residuals.png`.
-The residual spread visibly widens at higher predicted fares (funnel shape), which indicates **heteroscedasticity** â€” the model's errors are not uniform across the range of predictions, and it under-predicts extreme high fares in particular (likely first-class outliers).
+The residual spread visibly widens at higher predicted fares (funnel shape), which indicates **heteroscedasticity** — the model's errors are not uniform across the range of predictions, and it under-predicts extreme high fares in particular (likely first-class outliers).
 
 ## 8. Final Model Comparison & Recommendation
 
