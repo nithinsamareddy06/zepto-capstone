@@ -3,14 +3,14 @@
 One repository, three internally-linked capabilities, submitted as a single
 project for the Certificate Program in AI/ML:
 
-- **`/data_pipeline`** (25 marks) — scrape → clean → convert → store →
+- **`/Module1_DataPipeline`** (25 marks) — scrape → clean → convert → store →
   query: a raw-to-relational data-engineering pipeline over public
   catalogue data.
-- **`/analytics`** (50 marks) — a full analyst-to-data-scientist workflow
+- **`/Module2_ML_Analytics`** (50 marks) — a full analyst-to-data-scientist workflow
   on the Titanic dataset: profiling, cleaning, a visual data story, and a
   rigorously evaluated predictive-modeling pipeline (classification +
   regression).
-- **`/support_assistant`** (25 marks) — a small, complete GenAI RAG
+- **`/Module3_Support_Assistant`** (25 marks) — a small, complete GenAI RAG
   service over Zepto's own policy documents: ChromaDB retrieval, a
   LangGraph-orchestrated flow, a Pydantic structured-output guarantee, and
   a FastAPI wrapper, gated behind a fully offline `MOCK_LLM` mode that is
@@ -25,7 +25,7 @@ together in this one repo as a single, coherent submission.
 .
 ├── README.md                  <- this file
 ├── requirements.txt            <- consolidated deps for all 3 modules (see note below)
-├── data_pipeline/
+├── Module1_DataPipeline/
 │   ├── scrape.py
 │   ├── clean_and_load.py
 │   ├── queries.py
@@ -33,7 +33,7 @@ together in this one repo as a single, coherent submission.
 │   ├── queries_output.txt
 │   ├── books_raw.csv / books_cleaned.csv
 │   └── README.md
-├── analytics/
+├── Module2_ML_Analytics/
 │   ├── 01_eda.py
 │   ├── 02_modeling.py
 │   ├── titanic.csv / titanic_cleaned.csv
@@ -41,7 +41,7 @@ together in this one repo as a single, coherent submission.
 │   ├── best_pipeline.joblib
 │   ├── EDA_FINDINGS.md / MODELING_REPORT.md
 │   └── README.md
-└── support_assistant/
+└── Module3_Support_Assistant/
     ├── docs/doc_01.txt … doc_08.txt
     ├── ingest.py / rag.py / prompt_template.py / graph.py / main.py
     ├── Dockerfile
@@ -51,10 +51,8 @@ together in this one repo as a single, coherent submission.
 
 ## Setup
 
-This project uses **one consolidated `requirements.txt`** at the repo
-root, covering all 3 modules' dependencies (module-specific subsets are
-also listed in each module's own README/requirements.txt if you'd rather
-install per module).
+This project uses a **`requirements.txt` in each module folder**, plus a
+consolidated one at the repo root covering everything.
 
 ```bash
 python -m venv venv && source venv/bin/activate    # optional but recommended
@@ -65,22 +63,22 @@ pip install -r requirements.txt
 
 **1. Data pipeline**
 ```bash
-cd data_pipeline
+cd Module1_DataPipeline
 python scrape.py            # needs internet access to books.toscrape.com
 python clean_and_load.py    # cleans, converts currency, loads SQLite
-python queries.py           # runs the 5 required SQL queries + pandas check
+python queries.py           # runs 7 SQL queries (3 JOINs) + pandas checks
 ```
 
 **2. Analytics**
 ```bash
-cd analytics
+cd Module2_ML_Analytics
 python 01_eda.py        # loads Titanic once, profiles, cleans, EDA story
 python 02_modeling.py   # classifiers, imbalance handling, tuning, regression, saved pipeline
 ```
 
 **3. Support assistant**
 ```bash
-cd support_assistant
+cd Module3_Support_Assistant
 python ingest.py                                  # builds the ChromaDB index
 uvicorn main:app --host 0.0.0.0 --port 7860        # MOCK_LLM defaults to the graded offline mode
 # or, via Docker:
@@ -97,13 +95,13 @@ median-imputed; categorical/text parse failures (`rating`, `in_stock`,
 status would misrepresent the source data. Currency conversion uses the
 required fixed baseline (1 GBP = 105.50 INR) — an artificial project
 constant, not a live rate. Schema is two tables (`categories`, `books`)
-sharing a PK/FK relationship; 5 SQL queries cover every required clause
-plus a JOIN, cross-checked against an equivalent `pd.merge`. Full
-reasoning: [`data_pipeline/README.md`](data_pipeline/README.md).
+sharing a PK/FK relationship; 7 SQL queries cover every required clause
+plus 3 JOINs, each cross-checked against an equivalent `pd.merge`. Full
+reasoning: [`Module1_DataPipeline/README.md`](Module1_DataPipeline/README.md).
 
 **Module 2.** The Titanic dataset is loaded exactly once via
 `sns.load_dataset`, cached to `titanic.csv`, cleaned per an explicit
-missing-value threshold rule, and explored with univariate, bivariate,
+missing-value threshold rule (columns over 30% missing, like `deck`, are dropped), and explored with univariate, bivariate,
 correlation, and multivariate ("data story") analysis, each chart backed
 by a written interpretation. The modeling pipeline continues from that
 same cleaned data: a stratified split, leak-free `ColumnTransformer`
@@ -113,8 +111,8 @@ vs. SMOTE), `GridSearchCV` + OOB-score tuning on Random Forest, a
 `fare`-prediction regression side-task with a heteroscedasticity
 check, and a final saved end-to-end `joblib` pipeline verified to
 reload and predict correctly on raw input. Full reasoning and results:
-[`analytics/README.md`](analytics/README.md), [`analytics/EDA_FINDINGS.md`](analytics/EDA_FINDINGS.md),
-[`analytics/MODELING_REPORT.md`](analytics/MODELING_REPORT.md).
+[`Module2_ML_Analytics/README.md`](Module2_ML_Analytics/README.md), [`Module2_ML_Analytics/EDA_FINDINGS.md`](Module2_ML_Analytics/EDA_FINDINGS.md),
+[`Module2_ML_Analytics/MODELING_REPORT.md`](Module2_ML_Analytics/MODELING_REPORT.md).
 
 **Module 3.** 8 Zepto policy documents are chunked one-per-document,
 embedded locally with `all-MiniLM-L6-v2`, and stored in ChromaDB. A
@@ -129,7 +127,7 @@ optional `MOCK_LLM=0` extension (a free-tier LLM such as Groq) is wired
 up as a clearly-marked, ungraded stretch with schema-validation retries.
 A FastAPI `POST /ask` endpoint and a Dockerfile expose the service
 locally. Full architecture walkthrough and example call transcripts:
-[`support_assistant/README.md`](support_assistant/README.md).
+[`Module3_Support_Assistant/README.md`](Module3_Support_Assistant/README.md).
 
 ## Sandbox / environment notes
 

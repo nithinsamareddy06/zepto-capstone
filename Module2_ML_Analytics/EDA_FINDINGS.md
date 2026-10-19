@@ -57,7 +57,7 @@ memory usage: 80.7 KB
 
 ## 2. Missing-value handling (threshold rule: <5% -> drop rows, 5-30% -> impute, very-high -> drop column / encode as its own category)
 
-- `deck`: 77.22% missing -> **very high**; encoded missing values as their own category `'Unknown'` instead of imputing or dropping the column, since imputing a deck letter for 77% of rows would be fabricated information, but the column still carries signal (missing deck strongly co-occurs with lower classes).
+- `deck`: 77.22% missing -> **>30%**; **dropped the column**. Imputing a deck letter for that many rows would be mostly fabricated information, and its signal (cabin location) is already largely captured by `pclass` and `fare`.
 
 - `age`: 19.87% missing -> **5-30%**; imputed with median = 28.00.
 
@@ -66,7 +66,7 @@ memory usage: 80.7 KB
 - `embark_town`: 0.22% missing -> **<5%**; dropped 0 row(s) with missing values.
 
 
-Shape after cleaning: (889, 15)
+Shape after cleaning: (889, 14)
 
 ## 3. Univariate analysis — age & fare
 

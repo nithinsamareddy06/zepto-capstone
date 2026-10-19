@@ -1,4 +1,4 @@
-# Module 1 — Data Pipeline (`/data_pipeline`)
+# Module 1 — Data Pipeline (`/Module1_DataPipeline`)
 
 Scrapes catalogue-style product data from [books.toscrape.com](https://books.toscrape.com)
 (a public scraping-practice sandbox), cleans and types it, converts price to
@@ -11,7 +11,7 @@ database that is then queried with both SQL and pandas.
 |---|---|
 | `scrape.py` | Scrapes 5 categories (Travel, Mystery, Historical Fiction, Classics, Romance) across all their pages, saves `books_raw.csv`. |
 | `clean_and_load.py` | Cleans/types `books_raw.csv`, applies the fixed GBP→INR rate, writes `books_cleaned.csv`, and loads it into `zepto_catalogue.db`. |
-| `queries.py` | Runs the 5 required SQL queries against the DB and cross-checks the JOIN query against a pure-pandas `pd.merge`. Output saved in `queries_output.txt`. |
+| `queries.py` | Runs 7 SQL queries (3 of them JOINs) against the DB and cross-checks each JOIN against a pure-pandas `pd.merge`. Output saved in `queries_output.txt`. |
 | `zepto_catalogue.db` | The generated SQLite database (regenerable by re-running the two scripts above). |
 
 ## How to run
@@ -57,11 +57,11 @@ simply applied as a constant, as instructed.
 category_id FK)`, in 2NF: category names aren't repeated on every book row,
 and every book links back to exactly one category via foreign key.
 
-**SQL query coverage.** The 5 queries in `queries.py` cover, respectively:
-`SELECT`/`WHERE` (in-stock books), `ORDER BY` + `LIMIT` (top 10 priciest
-books), `DISTINCT` (distinct rating values), `IN` + `BETWEEN` (rating in
-{4,5} and price between 20–40 GBP), and a `JOIN` (books ranked by rating
-within each category). The JOIN result is then reproduced with
-`pd.read_sql` and independently with `pd.merge` on the two DataFrames
-loaded via `pd.read_sql("SELECT * FROM books/categories")`, and the two
-outputs are asserted equal.
+**SQL query coverage.** The 7 queries in `queries.py` cover `SELECT`/`WHERE`
+(in-stock books), `ORDER BY` + `LIMIT` (top 10 priciest books), `DISTINCT`
+(distinct ratings), `IN` + `BETWEEN` (rating in {4,5}, price 20–40 GBP), and
+**three JOINs**: (5) books ranked by rating within each category, (6) average
+price and book count per category (`JOIN` + `GROUP BY`), and (7) in-stock
+mid-priced books with their category (`JOIN` + `WHERE` + `BETWEEN`). Each JOIN
+is reproduced with `pd.read_sql` and independently with `pd.merge` on the two
+DataFrames loaded from the tables, and the outputs are asserted equal.

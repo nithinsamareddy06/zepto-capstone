@@ -2,12 +2,12 @@
 # You can also install per-module if you prefer (each module folder's own
 # subset is listed in its README), but this single file covers everything.
 
-# --- Module 1: data_pipeline ---
+# --- Module 1: Module1_DataPipeline ---
 requests
 beautifulsoup4
 pandas
 
-# --- Module 2: analytics ---
+# --- Module 2: Module2_ML_Analytics ---
 seaborn
 scikit-learn
 imbalanced-learn
@@ -16,7 +16,7 @@ matplotlib
 numpy
 tabulate
 
-# --- Module 3: support_assistant ---
+# --- Module 3: Module3_Support_Assistant ---
 sentence-transformers
 chromadb
 langgraph

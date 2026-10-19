@@ -1,4 +1,4 @@
-# Module 3 — Support Assistant (`/support_assistant`)
+# Module 3 — Support Assistant (`/Module3_Support_Assistant`)
 
 A small, complete RAG service for Zepto: 8 policy documents, embedded
 locally and indexed in ChromaDB, orchestrated through a LangGraph flow that
