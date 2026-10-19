@@ -41,38 +41,25 @@ docker build -t zepto-support-assistant .
 docker run -p 7860:7860 zepto-support-assistant
 ```
 
-> **Sandbox note:** this development container has no network route to
-> `huggingface.co` (only a short allow-list of package registries is
-> reachable), so the embedding-model download itself could not be executed
-> here. All ingestion/retrieval/graph/FastAPI logic was validated
-> end-to-end in this environment using a temporary, test-only deterministic
-> stand-in for `SentenceTransformer.encode()` (not part of this repo) —
-> confirming chunking, ChromaDB storage/query, the LangGraph routing, the
-> mock-mode answer templates, and the FastAPI request/response cycle all
-> work correctly. With normal internet access, `python ingest.py` downloads
-> the real model once and everything below runs unchanged.
 
 ## Example calls (MOCK_LLM at its default)
 
-These transcripts were captured against the real graph/FastAPI code above
-(via `TestClient`, with the retrieval step running against a stand-in
-embedder for the reason noted above — request/response shape and routing
-are otherwise exactly what a live `uvicorn` server returns).
+Captured from the running service (`python -m uvicorn main:app --port 7860`) via the `/docs` page. `MOCK_LLM` was left unset (mock mode).
 
-**Call 1 — triggers retrieval (`policy_question`):**
+**Call 1 - triggers retrieval (`policy_question`):**
 ```
 POST /ask
 {"query": "Can I cancel my order after it's packed?"}
 
 200 OK
 {
-  "answer": "Based on the retrieved context: Orders can be cancelled free of cost any time before the order status changes to 'Packed', typically within the first 2 minutes of placing the order. Once an order has been packed, it can no longer be...",
-  "sources": ["doc_05", "doc_04", "doc_06"],
-  "confidence": 1.0
+  "answer": "Based on the retrieved context: Orders can be cancelled free of cost any time before the order status changes to 'Packed', typically within the first 2 minutes of placing the order. Once an order has been packed, it can no longer be",
+  "sources": ["doc_05", "doc_02", "doc_06"],
+  "confidence": 1
 }
 ```
 
-**Call 2 — does not trigger retrieval (`general_question`):**
+**Call 2 - does not trigger retrieval (`general_question`):**
 ```
 POST /ask
 {"query": "Tell me a joke"}
@@ -81,7 +68,7 @@ POST /ask
 {
   "answer": "I can only answer questions about Zepto policies right now.",
   "sources": [],
-  "confidence": 1.0
+  "confidence": 1
 }
 ```
 

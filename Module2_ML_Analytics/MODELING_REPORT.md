@@ -52,10 +52,10 @@ Class balance: {0: 0.618, 1: 0.382} (survived=1 is the minority class)
 | Strategy                |   Precision |   Recall |    F1 |
 |:------------------------|------------:|---------:|------:|
 | Baseline (no handling)  |       0.793 |    0.676 | 0.73  |
-| class_weight='balanced' |       0.754 |    0.721 | 0.737 |
+| class_weight='balanced' |       0.743 |    0.765 | 0.754 |
 | SMOTE (train fold only) |       0.758 |    0.735 | 0.746 |
 
-**Conclusion:** `SMOTE (train fold only)` achieved the best F1 (0.746) on this split. Titanic's imbalance (~62/38) is mild, so gains over baseline are modest either way; `class_weight='balanced'` tends to nudge recall for the minority class up at a small precision cost without changing the training data, while SMOTE synthesizes new minority examples and can push recall further but risks slightly more overfit synthetic patterns on a dataset this small.
+**Conclusion:** `class_weight='balanced'` achieved the best F1 (0.754) on this split. Titanic's imbalance (~62/38) is mild, so gains over baseline are modest either way; `class_weight='balanced'` tends to nudge recall for the minority class up at a small precision cost without changing the training data, while SMOTE synthesizes new minority examples and can push recall further but risks slightly more overfit synthetic patterns on a dataset this small.
 
 ## 5. Hyperparameter tuning (GridSearchCV + OOB score)
 

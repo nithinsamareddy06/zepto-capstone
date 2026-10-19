@@ -26,7 +26,7 @@ Data columns (total 15 columns):
  13  alive        891 non-null    str     
  14  alone        891 non-null    bool    
 dtypes: bool(2), category(2), float64(2), int64(4), str(5)
-memory usage: 80.7 KB
+memory usage: 100.4 KB
 
 ```
 

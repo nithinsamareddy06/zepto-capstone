@@ -129,21 +129,7 @@ A FastAPI `POST /ask` endpoint and a Dockerfile expose the service
 locally. Full architecture walkthrough and example call transcripts:
 [`Module3_Support_Assistant/README.md`](Module3_Support_Assistant/README.md).
 
-## Sandbox / environment notes
-
-Two external resources used by this project were not reachable from the
-development sandbox this repo was built in (`books.toscrape.com` for
-Module 1, and `huggingface.co`'s model hub for Module 3's embedding
-model). Both modules' code is written and structurally validated against
-those exact interfaces (Module 1's cleaning/loading/query logic was
-tested against a synthetic fixture in `scrape.py`'s output shape; Module
-3's full ingestion/retrieval/graph/FastAPI flow was tested with a
-temporary stand-in embedder). Module 2, whose only external dependency
-(`raw.githubusercontent.com`, which serves Seaborn's dataset repository)
-*was* reachable, was run for real end-to-end, and all of its charts,
-tables, and reports in this repo reflect a genuine run against the actual
-Titanic dataset. See each module's own README for the specific note and
-what to expect when you run it with normal internet access.
+All three modules were run end to end; outputs in this repo come from real runs.
 
 ## Git workflow
 

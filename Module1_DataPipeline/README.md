@@ -23,13 +23,6 @@ python clean_and_load.py    # cleans, converts currency, loads SQLite
 python queries.py           # runs SQL + pandas verification, prints results
 ```
 
-> **Sandbox note:** this development environment could not reach
-> `books.toscrape.com` directly, so the wiring of `clean_and_load.py` and
-> `queries.py` was validated end-to-end against a synthetic 70-row fixture
-> in the exact shape `scrape.py` produces (same columns: `title`, `price`,
-> `star_rating`, `availability`, `category`). Running `scrape.py` with a
-> normal internet connection reproduces `books_raw.csv` for real and the
-> rest of the pipeline runs unchanged on top of it.
 
 ## Design decisions
 

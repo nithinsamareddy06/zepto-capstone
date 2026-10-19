@@ -4,93 +4,147 @@ Query: 1. In-stock books (SELECT + WHERE)
 ----------------------------------------------------------------------
 SELECT title, price_gbp, rating FROM books WHERE in_stock = 1;
 ----------------------------------------------------------------------
-                             title  price_gbp  rating
-             Travel Sample Title 1      42.15       1
-             Travel Sample Title 2      24.11       2
-             Travel Sample Title 3      46.95       5
-             Travel Sample Title 4      39.72       1
-             Travel Sample Title 5      15.14       2
-             Travel Sample Title 6      40.29       5
-             Travel Sample Title 7      45.94       5
-             Travel Sample Title 8      21.41       5
-             Travel Sample Title 9      50.56       1
-            Travel Sample Title 10      45.05       3
-            Travel Sample Title 11      18.19       3
-            Travel Sample Title 12      15.09       1
-            Travel Sample Title 13      52.44       5
-            Travel Sample Title 14      50.44       4
-            Mystery Sample Title 1      16.68       4
-            Mystery Sample Title 2      37.82       5
-            Mystery Sample Title 3      39.07       1
-            Mystery Sample Title 4      43.23       3
-            Mystery Sample Title 5      52.83       1
-            Mystery Sample Title 6      24.26       3
-            Mystery Sample Title 7      28.82       2
-            Mystery Sample Title 8      23.71       1
-            Mystery Sample Title 9      41.93       5
-           Mystery Sample Title 10      22.62       4
-           Mystery Sample Title 11      23.86       5
-           Mystery Sample Title 12      44.38       1
-           Mystery Sample Title 13      51.17       3
-           Mystery Sample Title 14      23.75       2
-           Mystery Sample Title 15      53.87       3
- Historical Fiction Sample Title 1      42.94       4
- Historical Fiction Sample Title 2      33.21       3
- Historical Fiction Sample Title 3      22.71       5
- Historical Fiction Sample Title 4      23.50       5
- Historical Fiction Sample Title 5      54.93       4
- Historical Fiction Sample Title 6      21.35       2
- Historical Fiction Sample Title 7      34.92       1
- Historical Fiction Sample Title 8      18.06       2
- Historical Fiction Sample Title 9      31.39       1
-Historical Fiction Sample Title 10      29.39       4
-Historical Fiction Sample Title 11      22.94       5
-Historical Fiction Sample Title 12      44.17       1
-Historical Fiction Sample Title 13      54.29       3
-           Classics Sample Title 1      27.34       3
-           Classics Sample Title 2      18.33       1
-           Classics Sample Title 3      53.85       3
-           Classics Sample Title 4      48.21       5
-           Classics Sample Title 5      53.58       3
-           Classics Sample Title 6      35.62       2
-           Classics Sample Title 7      29.00       2
-           Classics Sample Title 8      57.69       5
-           Classics Sample Title 9      40.14       4
-          Classics Sample Title 10      16.04       3
-          Classics Sample Title 11      22.35       2
-          Classics Sample Title 12      57.36       1
-            Romance Sample Title 1      34.55       1
-            Romance Sample Title 2      48.40       2
-            Romance Sample Title 3      34.02       5
-            Romance Sample Title 4      23.62       5
-            Romance Sample Title 5      58.23       5
-            Romance Sample Title 6      44.64       3
-            Romance Sample Title 7      59.75       3
-            Romance Sample Title 8      55.02       4
-            Romance Sample Title 9      22.77       1
-           Romance Sample Title 10      11.54       5
-           Romance Sample Title 11      39.62       1
-           Romance Sample Title 12      45.53       1
-           Romance Sample Title 13      13.84       1
-           Romance Sample Title 14      14.01       2
-                 Broken Price Book      35.62       3
+                                                                                            title  price_gbp  rating
+                                                                          It's Only the Himalayas      45.17       2
+                               Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond      49.43       4
+                               See America: A Celebration of Our National Parks & Treasured Sites      48.87       3
+                              Vagabonding: An Uncommon Guide to the Art of Long-Term World Travel      36.94       2
+                                                                             Under the Tuscan Sun      37.33       3
+                                                                               A Summer In Europe      44.34       2
+                                                                         The Great Railway Bazaar      30.54       1
+                                                                 A Year in Provence (Provence #1)      56.88       4
+The Road to Little Dribbling: Adventures of an American in Britain (Notes From a Small Island #2)      23.21       1
+                                                        Neither Here nor There: Travels in Europe      38.95       3
+                                                               1,000 Places to See Before You Die      26.08       5
+                                                                                    Sharp Objects      47.82       4
+                                                                             In a Dark, Dark Wood      19.63       1
+                                                                              The Past Never Ends      56.50       4
+                                                                                 A Murder in Time      16.64       1
+                                                  The Murder of Roger Ackroyd (Hercule Poirot #4)      44.10       4
+                                                                   The Last Mile (Amos Decker #2)      54.21       2
+                                                           That Darkness (Gardiner and Renner #1)      13.92       1
+                                                             Tastes Like Fear (DI Marnie Rome #3)      10.69       1
+                                                           A Time of Torment (Charlie Parker #14)      48.35       5
+                                                          A Study in Scarlet (Sherlock Holmes #1)      16.73       2
+                                                                 Poisonous (Max Revere Novels #3)      26.80       3
+                                            Murder at the 42nd Street Library (Raymond Ambler #1)      54.36       4
+                                                                                      Most Wanted      35.28       3
+                                                                       Hide Away (Eve Duncan #20)      11.84       1
+                                                                    Boar Island (Anna Pigeon #19)      59.48       3
+                                                                                        The Widow      27.26       2
+                                                                                Playing with Fire      13.71       3
+                                What Happened on Beale Street (Secrets of the South Mysteries #2)      25.37       5
+                         The Bachelor Girl's Guide to Murder (Herringford and Watts Mysteries #1)      52.30       5
+                                                 Delivering the Truth (Quaker Midwife Mystery #1)      20.89       4
+                                              The Mysterious Affair at Styles (Hercule Poirot #1)      24.80       4
+                                                            In the Woods (Dublin Murder Squad #1)      38.38       2
+                                                                The Silkworm (Cormoran Strike #2)      23.05       5
+                                                                                       The Exiled      43.45       3
+                                                        The Cuckoo's Calling (Cormoran Strike #1)      19.21       1
+                                                               Extreme Prey (Lucas Davenport #26)      25.40       3
+                                                              Career of Evil (Cormoran Strike #3)      24.72       2
+                           The No. 1 Ladies' Detective Agency (No. 1 Ladies' Detective Agency #1)      57.70       4
+                                                                                The Girl You Lost      12.29       5
+                                                        The Girl In The Ice (DCI Erika Foster #1)      15.85       3
+                                                             Blood Defense (Samantha Brinkman #1)      20.30       3
+                                                              1st to Die (Women's Murder Club #1)      53.98       1
+                                                                               Tipping the Velvet      53.74       1
+                        Forever and Forever: The Courtship of Henry Longfellow and Fanny Appleton      29.69       3
+                                                          A Flight of Arrows (The Pathfinders #2)      55.53       5
+                                                                            The House by the Lake      36.95       1
+                                                                                     Mrs. Houdini      30.25       5
+                                                                        The Marriage of Opposites      28.08       4
+                                                  Glory over Everything: Beyond The Kitchen House      45.84       3
+                                                                             Love, Lies and Spies      20.55       2
+                                                                                A Paris Apartment      39.01       4
+                                                                                      Lilac Girls      17.28       2
+                                                       The Constant Princess (The Tudor Court #1)      16.62       3
+                                                                           The Invention of Wings      37.34       1
+                                                  World Without End (The Pillars of the Earth #2)      32.97       4
+                                                                            The Passion of Dolssa      28.32       5
+                                                                        Girl With a Pearl Earring      26.77       1
+                                                                           Voyager (Outlander #3)      21.07       5
+                                                                                     The Red Tent      35.66       5
+                                                                 The Last Painting of Sara de Vos      55.55       2
+                                                The Guernsey Literary and Potato Peel Pie Society      49.53       1
+                                                                            Girl in the Blue Coat      46.83       2
+                                                                           Between Shades of Gray      20.79       5
+                                                                              While You Were Mine      41.32       5
+                                                                                The Secret Healer      34.56       3
+                                                                                         Starlark      25.83       3
+                                                                            Lost Among the Living      27.70       4
+                                                A Spy's Devotion (The Regency Spies of London #1)      16.97       5
+                                                                                The Secret Garden      15.08       4
+                                                                                The Metamorphosis      28.58       1
+                                                                           The Pilgrim's Progress      50.26       2
+                                               The Hound of the Baskervilles (Sherlock Holmes #5)      14.82       2
+                                                                   Little Women (Little Women #1)      28.07       4
+                                                                               Gone with the Wind      32.49       3
+                                                                                          Candide      58.63       3
+                                                                                      Animal Farm      57.22       3
+                                                                                Wuthering Heights      17.73       3
+                                                                       The Picture of Dorian Gray      29.70       2
+                    The Complete Stories and Poems (The Works of Edgar Allan Poe [Cameo Edition])      26.78       4
+                                                                                          Beowulf      38.35       2
+                                                                         And Then There Were None      35.01       2
+                                                                        The Story of Hong Gildong      43.19       4
+                                                                                The Little Prince      45.42       2
+                                                                            Sense and Sensibility      37.46       1
+                                                                                  Of Mice and Men      47.11       2
+                                                                                             Emma      32.93       2
+                                        Alice in Wonderland (Alice's Adventures in Wonderland #1)      55.53       1
+                                                                       Chase Me (Paris Nights #2)      25.27       5
+                                                                                       Black Dust      34.53       5
+                                                    Her Backup Boyfriend (The Sorensen Family #1)      33.97       1
+                                                               First and First (Five Boroughs #3)      15.97       4
+                                                            Fifty Shades Darker (Fifty Shades #2)      21.96       1
+                                                                                The Wedding Dress      24.12       1
+                                                                 Suddenly in Love (Lake Haven #1)      55.99       2
+                                                                         Something More Than This      16.24       4
+                                                                Doing It Over (Most Likely To #1)      35.61       3
+                                                              The Wedding Pact (The O'Malleys #2)      32.61       3
+                                                          Hold Your Breath (Search and Rescue #1)      28.82       1
+                                                                              Dirty (Dive Bar #1)      40.83       4
+                                                      Take Me Home Tonight (Rock Star Romance #3)      53.98       3
+                                                            Off the Hook (Fishing for Trouble #1)      47.67       3
+                                                 A Gentleman's Position (Society of Gentlemen #3)      14.75       5
+                                                                                  Sit, Stay, Love      20.90       3
+                                                  A Girl's Guide to Moving On (New Beginnings #2)      31.30       1
+                                                               The Perfect Play (Play by Play #1)      59.99       3
+                                                         Dark Lover (Black Dagger Brotherhood #1)      12.87       1
+                                                              Changing the Game (Play by Play #2)      13.38       3
+                                                                               A Walk to Remember      56.43       1
+                                                       The Purest Hook (Second Circle Tattoos #3)      12.25       1
+                                                                                    The Obsession      45.43       1
+                                                                             Reservations for Two      11.10       3
+                                                                Best of My Love (Fool's Gold #20)      27.41       2
+                                                      Where Lightning Strikes (Bleeding Stars #3)      39.77       3
+                                                              This One Moment (Pushing Limits #1)      48.71       1
+                                                                         Rhythm, Chord & Malykhin      28.34       2
+                                                             My Perfect Mistake (Over the Top #1)      38.92       2
+                                                                         Listen to Me (Fusion #1)      58.99       3
+                                                                                Imperfect Harmony      34.74       4
+                                                                      Fighting Fate (Fighting #6)      39.24       3
+                                                                  Deep Under (Walker Security #1)      47.09       5
+                                                        Charity's Cross (Charles Towne Belles #4)      41.24       1
+                                                                    Bounty (Colorado Mountain #7)      37.26       4
 
 ======================================================================
 Query: 2. Top 10 most expensive books, in INR (ORDER BY + LIMIT)
 ----------------------------------------------------------------------
 SELECT title, price_inr FROM books ORDER BY price_inr DESC LIMIT 10;
 ----------------------------------------------------------------------
-                             title  price_inr
-            Romance Sample Title 7    6303.62
-            Romance Sample Title 5    6143.26
-           Classics Sample Title 8    6086.30
-          Classics Sample Title 12    6051.48
-            Romance Sample Title 8    5804.61
- Historical Fiction Sample Title 5    5795.12
-Historical Fiction Sample Title 13    5727.60
-           Mystery Sample Title 15    5683.28
-           Classics Sample Title 3    5681.18
-           Classics Sample Title 5    5652.69
+                                                                 title  price_inr
+                                    The Perfect Play (Play by Play #1)    6328.95
+                                         Boar Island (Anna Pigeon #19)    6275.14
+                                              Listen to Me (Fusion #1)    6223.45
+                                                               Candide    6185.46
+The No. 1 Ladies' Detective Agency (No. 1 Ladies' Detective Agency #1)    6087.35
+                                                           Animal Farm    6036.71
+                                      A Year in Provence (Provence #1)    6000.84
+                                                   The Past Never Ends    5960.75
+                                                    A Walk to Remember    5953.36
+                                      Suddenly in Love (Lake Haven #1)    5906.95
 
 ======================================================================
 Query: 3. Distinct rating values present (DISTINCT)
@@ -111,17 +165,27 @@ SELECT title, price_gbp, rating
         FROM books
         WHERE rating IN (4, 5) AND price_gbp BETWEEN 20 AND 40;
 ----------------------------------------------------------------------
-                             title  price_gbp  rating
-             Travel Sample Title 8      21.41       5
-            Mystery Sample Title 2      37.82       5
-           Mystery Sample Title 10      22.62       4
-           Mystery Sample Title 11      23.86       5
- Historical Fiction Sample Title 3      22.71       5
- Historical Fiction Sample Title 4      23.50       5
-Historical Fiction Sample Title 10      29.39       4
-Historical Fiction Sample Title 11      22.94       5
-            Romance Sample Title 3      34.02       5
-            Romance Sample Title 4      23.62       5
+                                                                        title  price_gbp  rating
+                                           1,000 Places to See Before You Die      26.08       5
+            What Happened on Beale Street (Secrets of the South Mysteries #2)      25.37       5
+                             Delivering the Truth (Quaker Midwife Mystery #1)      20.89       4
+                          The Mysterious Affair at Styles (Hercule Poirot #1)      24.80       4
+                                            The Silkworm (Cormoran Strike #2)      23.05       5
+                                                                 Mrs. Houdini      30.25       5
+                                                    The Marriage of Opposites      28.08       4
+                                                            A Paris Apartment      39.01       4
+                              World Without End (The Pillars of the Earth #2)      32.97       4
+                                                        The Passion of Dolssa      28.32       5
+                                                       Voyager (Outlander #3)      21.07       5
+                                                                 The Red Tent      35.66       5
+                                                       Between Shades of Gray      20.79       5
+                                                        Lost Among the Living      27.70       4
+                                               Little Women (Little Women #1)      28.07       4
+The Complete Stories and Poems (The Works of Edgar Allan Poe [Cameo Edition])      26.78       4
+                                                   Chase Me (Paris Nights #2)      25.27       5
+                                                                   Black Dust      34.53       5
+                                                            Imperfect Harmony      34.74       4
+                                                Bounty (Colorado Mountain #7)      37.26       4
 
 ======================================================================
 Query: 5. Book/category JOIN, ranked by rating within category
@@ -131,76 +195,130 @@ SELECT c.category_name, b.title, b.rating, b.price_inr
         JOIN categories c ON b.category_id = c.category_id
         ORDER BY c.category_name, b.rating DESC, b.price_inr DESC;
 ----------------------------------------------------------------------
-     category_name                              title  rating  price_inr
-          Classics            Classics Sample Title 8       5    6086.30
-          Classics            Classics Sample Title 4       5    5086.16
-          Classics            Classics Sample Title 9       4    4234.77
-          Classics            Classics Sample Title 3       3    5681.18
-          Classics            Classics Sample Title 5       3    5652.69
-          Classics            Classics Sample Title 1       3    2884.37
-          Classics           Classics Sample Title 10       3    1692.22
-          Classics            Classics Sample Title 6       2    3757.91
-          Classics            Classics Sample Title 7       2    3059.50
-          Classics           Classics Sample Title 11       2    2357.93
-          Classics           Classics Sample Title 12       1    6051.48
-          Classics            Classics Sample Title 2       1    1933.81
-Historical Fiction  Historical Fiction Sample Title 4       5    2479.25
-Historical Fiction Historical Fiction Sample Title 11       5    2420.17
-Historical Fiction  Historical Fiction Sample Title 3       5    2395.91
-Historical Fiction  Historical Fiction Sample Title 5       4    5795.12
-Historical Fiction  Historical Fiction Sample Title 1       4    4530.17
-Historical Fiction Historical Fiction Sample Title 10       4    3100.64
-Historical Fiction Historical Fiction Sample Title 13       3    5727.60
-Historical Fiction  Historical Fiction Sample Title 2       3    3503.66
-Historical Fiction  Historical Fiction Sample Title 6       2    2252.43
-Historical Fiction  Historical Fiction Sample Title 8       2    1905.33
-Historical Fiction Historical Fiction Sample Title 12       1    4659.94
-Historical Fiction  Historical Fiction Sample Title 7       1    3684.06
-Historical Fiction  Historical Fiction Sample Title 9       1    3311.64
-           Mystery             Mystery Sample Title 9       5    4423.62
-           Mystery             Mystery Sample Title 2       5    3990.01
-           Mystery            Mystery Sample Title 11       5    2517.23
-           Mystery            Mystery Sample Title 10       4    2386.41
-           Mystery             Mystery Sample Title 1       4    1759.74
-           Mystery            Mystery Sample Title 15       3    5683.28
-           Mystery            Mystery Sample Title 13       3    5398.44
-           Mystery             Mystery Sample Title 4       3    4560.76
-           Mystery             Mystery Sample Title 6       3    2559.43
-           Mystery             Mystery Sample Title 7       2    3040.51
-           Mystery            Mystery Sample Title 14       2    2505.62
-           Mystery             Mystery Sample Title 5       1    5573.56
-           Mystery            Mystery Sample Title 12       1    4682.09
-           Mystery             Mystery Sample Title 3       1    4121.88
-           Mystery             Mystery Sample Title 8       1    2501.41
-           Romance             Romance Sample Title 5       5    6143.26
-           Romance             Romance Sample Title 3       5    3589.11
-           Romance             Romance Sample Title 4       5    2491.91
-           Romance            Romance Sample Title 10       5    1217.47
-           Romance             Romance Sample Title 8       4    5804.61
-           Romance             Romance Sample Title 7       3    6303.62
-           Romance             Romance Sample Title 6       3    4709.52
-           Romance             Romance Sample Title 2       2    5106.20
-           Romance            Romance Sample Title 14       2    1478.06
-           Romance            Romance Sample Title 12       1    4803.42
-           Romance            Romance Sample Title 11       1    4179.91
-           Romance             Romance Sample Title 1       1    3645.02
-           Romance             Romance Sample Title 9       1    2402.24
-           Romance            Romance Sample Title 13       1    1460.12
-            Travel             Travel Sample Title 13       5    5532.42
-            Travel              Travel Sample Title 3       5    4953.23
-            Travel              Travel Sample Title 7       5    4846.67
-            Travel              Travel Sample Title 6       5    4250.60
-            Travel              Travel Sample Title 8       5    2258.76
-            Travel             Travel Sample Title 14       4    5321.42
-            Travel             Travel Sample Title 10       3    4752.77
-            Travel                  Broken Price Book       3    3757.91
-            Travel             Travel Sample Title 11       3    1919.04
-            Travel              Travel Sample Title 2       2    2543.60
-            Travel              Travel Sample Title 5       2    1597.27
-            Travel              Travel Sample Title 9       1    5334.08
-            Travel              Travel Sample Title 1       1    4446.82
-            Travel              Travel Sample Title 4       1    4190.46
-            Travel             Travel Sample Title 12       1    1592.00
+     category_name                                                                                             title  rating  price_inr
+          Classics                                                                         The Story of Hong Gildong       4    4556.54
+          Classics                                                                    Little Women (Little Women #1)       4    2961.38
+          Classics                     The Complete Stories and Poems (The Works of Edgar Allan Poe [Cameo Edition])       4    2825.29
+          Classics                                                                                 The Secret Garden       4    1590.94
+          Classics                                                                                           Candide       3    6185.46
+          Classics                                                                                       Animal Farm       3    6036.71
+          Classics                                                                                Gone with the Wind       3    3427.70
+          Classics                                                                                 Wuthering Heights       3    1870.52
+          Classics                                                                            The Pilgrim's Progress       2    5302.43
+          Classics                                                                                   Of Mice and Men       2    4970.10
+          Classics                                                                                 The Little Prince       2    4791.81
+          Classics                                                                                           Beowulf       2    4045.92
+          Classics                                                                          And Then There Were None       2    3693.56
+          Classics                                                                                              Emma       2    3474.12
+          Classics                                                                        The Picture of Dorian Gray       2    3133.35
+          Classics                                                The Hound of the Baskervilles (Sherlock Holmes #5)       2    1563.51
+          Classics                                         Alice in Wonderland (Alice's Adventures in Wonderland #1)       1    5858.42
+          Classics                                                                             Sense and Sensibility       1    3952.03
+          Classics                                                                                 The Metamorphosis       1    3015.19
+Historical Fiction                                                           A Flight of Arrows (The Pathfinders #2)       5    5858.42
+Historical Fiction                                                                               While You Were Mine       5    4359.26
+Historical Fiction                                                                                      The Red Tent       5    3762.13
+Historical Fiction                                                                                      Mrs. Houdini       5    3191.38
+Historical Fiction                                                                             The Passion of Dolssa       5    2987.76
+Historical Fiction                                                                            Voyager (Outlander #3)       5    2222.89
+Historical Fiction                                                                            Between Shades of Gray       5    2193.34
+Historical Fiction                                                 A Spy's Devotion (The Regency Spies of London #1)       5    1790.33
+Historical Fiction                                                                                 A Paris Apartment       4    4115.55
+Historical Fiction                                                   World Without End (The Pillars of the Earth #2)       4    3478.34
+Historical Fiction                                                                         The Marriage of Opposites       4    2962.44
+Historical Fiction                                                                             Lost Among the Living       4    2922.35
+Historical Fiction                                                   Glory over Everything: Beyond The Kitchen House       3    4836.12
+Historical Fiction                                                                                 The Secret Healer       3    3646.08
+Historical Fiction                         Forever and Forever: The Courtship of Henry Longfellow and Fanny Appleton       3    3132.30
+Historical Fiction                                                                                          Starlark       3    2725.06
+Historical Fiction                                                        The Constant Princess (The Tudor Court #1)       3    1753.41
+Historical Fiction                                                                  The Last Painting of Sara de Vos       2    5860.52
+Historical Fiction                                                                             Girl in the Blue Coat       2    4940.56
+Historical Fiction                                                                              Love, Lies and Spies       2    2168.02
+Historical Fiction                                                                                       Lilac Girls       2    1823.04
+Historical Fiction                                                                                Tipping the Velvet       1    5669.57
+Historical Fiction                                                 The Guernsey Literary and Potato Peel Pie Society       1    5225.42
+Historical Fiction                                                                            The Invention of Wings       1    3939.37
+Historical Fiction                                                                             The House by the Lake       1    3898.23
+Historical Fiction                                                                         Girl With a Pearl Earring       1    2824.24
+           Mystery                          The Bachelor Girl's Guide to Murder (Herringford and Watts Mysteries #1)       5    5517.65
+           Mystery                                                            A Time of Torment (Charlie Parker #14)       5    5100.92
+           Mystery                                 What Happened on Beale Street (Secrets of the South Mysteries #2)       5    2676.54
+           Mystery                                                                 The Silkworm (Cormoran Strike #2)       5    2431.78
+           Mystery                                                                                 The Girl You Lost       5    1296.59
+           Mystery                            The No. 1 Ladies' Detective Agency (No. 1 Ladies' Detective Agency #1)       4    6087.35
+           Mystery                                                                               The Past Never Ends       4    5960.75
+           Mystery                                             Murder at the 42nd Street Library (Raymond Ambler #1)       4    5734.98
+           Mystery                                                                                     Sharp Objects       4    5045.01
+           Mystery                                                   The Murder of Roger Ackroyd (Hercule Poirot #4)       4    4652.55
+           Mystery                                               The Mysterious Affair at Styles (Hercule Poirot #1)       4    2616.40
+           Mystery                                                  Delivering the Truth (Quaker Midwife Mystery #1)       4    2203.90
+           Mystery                                                                     Boar Island (Anna Pigeon #19)       3    6275.14
+           Mystery                                                                                        The Exiled       3    4583.98
+           Mystery                                                                                       Most Wanted       3    3722.04
+           Mystery                                                                  Poisonous (Max Revere Novels #3)       3    2827.40
+           Mystery                                                                Extreme Prey (Lucas Davenport #26)       3    2679.70
+           Mystery                                                              Blood Defense (Samantha Brinkman #1)       3    2141.65
+           Mystery                                                         The Girl In The Ice (DCI Erika Foster #1)       3    1672.18
+           Mystery                                                                                 Playing with Fire       3    1446.41
+           Mystery                                                                    The Last Mile (Amos Decker #2)       2    5719.16
+           Mystery                                                             In the Woods (Dublin Murder Squad #1)       2    4049.09
+           Mystery                                                                                         The Widow       2    2875.93
+           Mystery                                                               Career of Evil (Cormoran Strike #3)       2    2607.96
+           Mystery                                                           A Study in Scarlet (Sherlock Holmes #1)       2    1765.02
+           Mystery                                                               1st to Die (Women's Murder Club #1)       1    5694.89
+           Mystery                                                                              In a Dark, Dark Wood       1    2070.96
+           Mystery                                                         The Cuckoo's Calling (Cormoran Strike #1)       1    2026.66
+           Mystery                                                                                  A Murder in Time       1    1755.52
+           Mystery                                                            That Darkness (Gardiner and Renner #1)       1    1468.56
+           Mystery                                                                        Hide Away (Eve Duncan #20)       1    1249.12
+           Mystery                                                              Tastes Like Fear (DI Marnie Rome #3)       1    1127.79
+           Romance                                                                   Deep Under (Walker Security #1)       5    4968.00
+           Romance                                                                                        Black Dust       5    3642.92
+           Romance                                                                        Chase Me (Paris Nights #2)       5    2665.98
+           Romance                                                  A Gentleman's Position (Society of Gentlemen #3)       5    1556.12
+           Romance                                                                               Dirty (Dive Bar #1)       4    4307.56
+           Romance                                                                     Bounty (Colorado Mountain #7)       4    3930.93
+           Romance                                                                                 Imperfect Harmony       4    3665.07
+           Romance                                                                          Something More Than This       4    1713.32
+           Romance                                                                First and First (Five Boroughs #3)       4    1684.84
+           Romance                                                                The Perfect Play (Play by Play #1)       3    6328.95
+           Romance                                                                          Listen to Me (Fusion #1)       3    6223.45
+           Romance                                                       Take Me Home Tonight (Rock Star Romance #3)       3    5694.89
+           Romance                                                             Off the Hook (Fishing for Trouble #1)       3    5029.19
+           Romance                                                       Where Lightning Strikes (Bleeding Stars #3)       3    4195.74
+           Romance                                                                       Fighting Fate (Fighting #6)       3    4139.82
+           Romance                                                                 Doing It Over (Most Likely To #1)       3    3756.86
+           Romance                                                               The Wedding Pact (The O'Malleys #2)       3    3440.36
+           Romance                                                                                   Sit, Stay, Love       3    2204.95
+           Romance                                                               Changing the Game (Play by Play #2)       3    1411.59
+           Romance                                                                              Reservations for Two       3    1171.05
+           Romance                                                                  Suddenly in Love (Lake Haven #1)       2    5906.95
+           Romance                                                              My Perfect Mistake (Over the Top #1)       2    4106.06
+           Romance                                                                          Rhythm, Chord & Malykhin       2    2989.87
+           Romance                                                                 Best of My Love (Fool's Gold #20)       2    2891.76
+           Romance                                                                                A Walk to Remember       1    5953.36
+           Romance                                                               This One Moment (Pushing Limits #1)       1    5138.90
+           Romance                                                                                     The Obsession       1    4792.86
+           Romance                                                         Charity's Cross (Charles Towne Belles #4)       1    4350.82
+           Romance                                                     Her Backup Boyfriend (The Sorensen Family #1)       1    3583.84
+           Romance                                                   A Girl's Guide to Moving On (New Beginnings #2)       1    3302.15
+           Romance                                                           Hold Your Breath (Search and Rescue #1)       1    3040.51
+           Romance                                                                                 The Wedding Dress       1    2544.66
+           Romance                                                             Fifty Shades Darker (Fifty Shades #2)       1    2316.78
+           Romance                                                          Dark Lover (Black Dagger Brotherhood #1)       1    1357.78
+           Romance                                                        The Purest Hook (Second Circle Tattoos #3)       1    1292.38
+            Travel                                                                1,000 Places to See Before You Die       5    2751.44
+            Travel                                                                  A Year in Provence (Provence #1)       4    6000.84
+            Travel                                Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond       4    5214.86
+            Travel                                See America: A Celebration of Our National Parks & Treasured Sites       3    5155.78
+            Travel                                                         Neither Here nor There: Travels in Europe       3    4109.23
+            Travel                                                                              Under the Tuscan Sun       3    3938.31
+            Travel                                                                           It's Only the Himalayas       2    4765.44
+            Travel                                                                                A Summer In Europe       2    4677.87
+            Travel                               Vagabonding: An Uncommon Guide to the Art of Long-Term World Travel       2    3897.17
+            Travel                                                                          The Great Railway Bazaar       1    3221.97
+            Travel The Road to Little Dribbling: Adventures of an American in Britain (Notes From a Small Island #2)       1    2448.66
 
 ======================================================================
 Query: 6. Average price per category (JOIN + GROUP BY)
@@ -213,11 +331,11 @@ SELECT c.category_name, COUNT(*) AS n_books,
         ORDER BY avg_price_gbp DESC;
 ----------------------------------------------------------------------
      category_name  n_books  avg_price_gbp
-          Classics       12          38.29
-            Travel       15          36.21
-           Romance       14          36.11
-           Mystery       15          35.20
-Historical Fiction       13          33.37
+            Travel       11          39.79
+          Classics       19          36.55
+           Romance       35          33.93
+Historical Fiction       26          33.64
+           Mystery       32          31.72
 
 ======================================================================
 Query: 7. In-stock mid-priced books with category (JOIN + WHERE + BETWEEN)
@@ -229,42 +347,42 @@ SELECT c.category_name, b.title, b.price_gbp
         ORDER BY b.price_gbp DESC
         LIMIT 15;
 ----------------------------------------------------------------------
-     category_name                              title  price_gbp
-            Travel              Travel Sample Title 4      39.72
-           Romance            Romance Sample Title 11      39.62
-           Mystery             Mystery Sample Title 3      39.07
-           Mystery             Mystery Sample Title 2      37.82
-          Classics            Classics Sample Title 6      35.62
-            Travel                  Broken Price Book      35.62
-Historical Fiction  Historical Fiction Sample Title 7      34.92
-           Romance             Romance Sample Title 1      34.55
-           Romance             Romance Sample Title 3      34.02
-Historical Fiction  Historical Fiction Sample Title 2      33.21
-Historical Fiction  Historical Fiction Sample Title 9      31.39
-Historical Fiction Historical Fiction Sample Title 10      29.39
-          Classics            Classics Sample Title 7      29.00
-           Mystery             Mystery Sample Title 7      28.82
-          Classics            Classics Sample Title 1      27.34
+     category_name                                                               title  price_gbp
+           Romance                         Where Lightning Strikes (Bleeding Stars #3)      39.77
+           Romance                                         Fighting Fate (Fighting #6)      39.24
+Historical Fiction                                                   A Paris Apartment      39.01
+            Travel                           Neither Here nor There: Travels in Europe      38.95
+           Romance                                My Perfect Mistake (Over the Top #1)      38.92
+           Mystery                               In the Woods (Dublin Murder Squad #1)      38.38
+          Classics                                                             Beowulf      38.35
+          Classics                                               Sense and Sensibility      37.46
+Historical Fiction                                              The Invention of Wings      37.34
+            Travel                                                Under the Tuscan Sun      37.33
+           Romance                                       Bounty (Colorado Mountain #7)      37.26
+Historical Fiction                                               The House by the Lake      36.95
+            Travel Vagabonding: An Uncommon Guide to the Art of Long-Term World Travel      36.94
+Historical Fiction                                                        The Red Tent      35.66
+           Romance                                   Doing It Over (Most Likely To #1)      35.61
 
 ======================================================================
 Equivalence check: pd.read_sql JOIN vs pandas-only pd.merge
 ======================================================================
 
 pd.read_sql result (first 5 rows):
-category_name                    title  rating  price_inr
-     Classics  Classics Sample Title 1       3    2884.37
-     Classics Classics Sample Title 10       3    1692.22
-     Classics Classics Sample Title 11       2    2357.93
-     Classics Classics Sample Title 12       1    6051.48
-     Classics  Classics Sample Title 2       1    1933.81
+category_name                                                     title  rating  price_inr
+     Classics Alice in Wonderland (Alice's Adventures in Wonderland #1)       1    5858.42
+     Classics                                  And Then There Were None       2    3693.56
+     Classics                                               Animal Farm       3    6036.71
+     Classics                                                   Beowulf       2    4045.92
+     Classics                                                   Candide       3    6185.46
 
 pd.merge result (first 5 rows):
-category_name                    title  rating  price_inr
-     Classics  Classics Sample Title 1       3    2884.37
-     Classics Classics Sample Title 10       3    1692.22
-     Classics Classics Sample Title 11       2    2357.93
-     Classics Classics Sample Title 12       1    6051.48
-     Classics  Classics Sample Title 2       1    1933.81
+category_name                                                     title  rating  price_inr
+     Classics Alice in Wonderland (Alice's Adventures in Wonderland #1)       1    5858.42
+     Classics                                  And Then There Were None       2    3693.56
+     Classics                                               Animal Farm       3    6036.71
+     Classics                                                   Beowulf       2    4045.92
+     Classics                                                   Candide       3    6185.46
 
 DataFrames are equal: True
 
