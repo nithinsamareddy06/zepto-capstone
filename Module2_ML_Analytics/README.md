@@ -1,4 +1,4 @@
-# Module 2 — Analytics Pipeline (`/analytics`)
+# Module 2 — Analytics Pipeline (`/Module2_ML_Analytics`)
 
 One cohesive pipeline on the Titanic dataset (`sns.load_dataset('titanic')`,
 loaded exactly once): profile it, clean it, tell a visual survival story
@@ -33,10 +33,9 @@ cache (or `titanic.csv`) and needs no network.
 
 **Missing-value strategy.** Applied per-column using the assignment's
 threshold rule: `<5%` missing → drop those rows; `5–30%` → impute
-(median for numeric, mode for categorical); very-high missing (`deck`,
-~77%) → too unreliable to impute meaningfully, so it's encoded as its own
-`"Unknown"` category rather than dropped outright, since "cabin unknown"
-itself carries signal correlated with class. Exact percentages per column
+(median for numeric, mode for categorical); more than 30% missing
+(`deck`, ~77%) → the column is **dropped**, since imputing it would be mostly
+fabricated data and its signal is largely captured by `pclass` and `fare`. Exact percentages per column
 are logged in `EDA_FINDINGS.md` §2.
 
 **Outliers & skew.** IQR-rule outlier counts are reported for both `age`

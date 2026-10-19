@@ -203,6 +203,50 @@ Historical Fiction  Historical Fiction Sample Title 9       1    3311.64
             Travel             Travel Sample Title 12       1    1592.00
 
 ======================================================================
+Query: 6. Average price per category (JOIN + GROUP BY)
+----------------------------------------------------------------------
+SELECT c.category_name, COUNT(*) AS n_books,
+               ROUND(AVG(b.price_gbp), 2) AS avg_price_gbp
+        FROM books b
+        JOIN categories c ON b.category_id = c.category_id
+        GROUP BY c.category_name
+        ORDER BY avg_price_gbp DESC;
+----------------------------------------------------------------------
+     category_name  n_books  avg_price_gbp
+          Classics       12          38.29
+            Travel       15          36.21
+           Romance       14          36.11
+           Mystery       15          35.20
+Historical Fiction       13          33.37
+
+======================================================================
+Query: 7. In-stock mid-priced books with category (JOIN + WHERE + BETWEEN)
+----------------------------------------------------------------------
+SELECT c.category_name, b.title, b.price_gbp
+        FROM books b
+        JOIN categories c ON b.category_id = c.category_id
+        WHERE b.in_stock = 1 AND b.price_gbp BETWEEN 20 AND 40
+        ORDER BY b.price_gbp DESC
+        LIMIT 15;
+----------------------------------------------------------------------
+     category_name                              title  price_gbp
+            Travel              Travel Sample Title 4      39.72
+           Romance            Romance Sample Title 11      39.62
+           Mystery             Mystery Sample Title 3      39.07
+           Mystery             Mystery Sample Title 2      37.82
+          Classics            Classics Sample Title 6      35.62
+            Travel                  Broken Price Book      35.62
+Historical Fiction  Historical Fiction Sample Title 7      34.92
+           Romance             Romance Sample Title 1      34.55
+           Romance             Romance Sample Title 3      34.02
+Historical Fiction  Historical Fiction Sample Title 2      33.21
+Historical Fiction  Historical Fiction Sample Title 9      31.39
+Historical Fiction Historical Fiction Sample Title 10      29.39
+          Classics            Classics Sample Title 7      29.00
+           Mystery             Mystery Sample Title 7      28.82
+          Classics            Classics Sample Title 1      27.34
+
+======================================================================
 Equivalence check: pd.read_sql JOIN vs pandas-only pd.merge
 ======================================================================
 
@@ -223,3 +267,6 @@ category_name                    title  rating  price_inr
      Classics  Classics Sample Title 2       1    1933.81
 
 DataFrames are equal: True
+
+Query 6 pd.read_sql vs pd.merge+groupby equal: True
+Query 7 pd.read_sql vs pd.merge+filter equal: True

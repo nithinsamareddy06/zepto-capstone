@@ -56,18 +56,15 @@ def main():
 
     df_clean = df.copy()
     for col, pct in missing_pct.items():
-        if col == "deck":
-            # deck is missing for ~77% of rows -> imputation would be almost
-            # entirely fabricated. We encode "Unknown" as its own category
-            # rather than dropping the column outright, since "cabin/deck
-            # unknown" itself correlates with class/fare in the source data.
-            df_clean[col] = df_clean[col].astype(object).fillna("Unknown")
-            log(f"- `{col}`: {pct}% missing -> **very high**; encoded missing "
-                f"values as their own category `'Unknown'` instead of imputing "
-                f"or dropping the column, since imputing a deck letter for 77% "
-                f"of rows would be fabricated information, but the column "
-                f"still carries signal (missing deck strongly co-occurs with "
-                f"lower classes).\n")
+        if pct > 30:
+            # deck is missing for ~77% of rows -> imputing would be almost
+            # entirely fabricated values, so per the >30% rule we DROP the
+            # column. It is also redundant with pclass/fare for our purposes.
+            df_clean = df_clean.drop(columns=[col])
+            log(f"- `{col}`: {pct}% missing -> **>30%**; **dropped the column**. "
+                f"Imputing a deck letter for that many rows would be mostly "
+                f"fabricated information, and its signal (cabin location) is "
+                f"already largely captured by `pclass` and `fare`.\n")
         elif pct < 5:
             n_before = len(df_clean)
             df_clean = df_clean.dropna(subset=[col])
@@ -84,9 +81,6 @@ def main():
                 df_clean[col] = df_clean[col].fillna(fill_val)
                 log(f"- `{col}`: {pct}% missing -> **5-30%**; imputed with "
                     f"mode = '{fill_val}'.\n")
-        else:
-            df_clean[col] = df_clean[col].astype(object).fillna("Unknown")
-            log(f"- `{col}`: {pct}% missing -> encoded as its own 'Unknown' category.\n")
 
     log(f"\nShape after cleaning: {df_clean.shape}\n")
 
